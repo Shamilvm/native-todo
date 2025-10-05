@@ -1,23 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, useColorScheme, View } from "react-native";
+import MainPage from "./pages/MainPage";
 
-import { StatusBar, useColorScheme } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import MainPage from './android/app/src/pages/MainPage';
-
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
+export default function App() {
+  const isDarkMode = useColorScheme() === "dark";
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+    <View style={{ flex: 1 }}>
       <MainPage />
-    </SafeAreaProvider>
+    </View>
   );
 }
-
-export default App;
